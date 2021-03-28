@@ -9,7 +9,7 @@ jobs:
         id: jelly
         run: echo "::set-output name=matrix::{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
       - name: hello
-        run: echo "${{fromJSON(steps.jelly.output.matrix)}}"
+        run: echo "${{fromJSON(steps.jelly.outputs.matrix)}}"
       - name: Hello world action step
         id: hello
         uses: ./.github/actions/hello-world-docker-action
