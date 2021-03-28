@@ -8,7 +8,7 @@ jobs:
       - name: hello
         run: echo "${{toJSON(github)}}"
       - name: hello
-        run: echo "${{fromJSON(github)}}"
+        run: echo "${{fromJSON("{"a":"b"}")}}"
       - name: Hello world action step
         id: hello
         uses: ./.github/actions/hello-world-docker-action
